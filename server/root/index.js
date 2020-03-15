@@ -1,5 +1,4 @@
 $(window).on('load',function(){
-    console.log("load");
     getSurveys();
 })
 //向后端请求获取文件
