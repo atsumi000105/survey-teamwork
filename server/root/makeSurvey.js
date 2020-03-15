@@ -21,18 +21,18 @@ $(window).on('load', function () {
     $('.postbtn').on('click', function () {
         generageJson();
     })
-    //扫描二维码事件
-    $('.qrbtn').on('click',function(){
-        //jsonfile是json文件的保存地址
-        var jsonfile="";
-        if(sessionStorage.getItem('jsonfile')!=null){
-            jsonfile=sessionStorage.getItem('jsonfile');
-        }else{
-            jsonfile="http://localhost:8080/saveError.php";
-        }
+    // //扫描二维码事件
+    // $('.qrbtn').on('click',function(){
+    //     //jsonfile是json文件的保存地址
+    //     var jsonfile="";
+    //     if(sessionStorage.getItem('jsonfile')!=null){
+    //         jsonfile=sessionStorage.getItem('jsonfile');
+    //     }else{
+    //         jsonfile="http://localhost:8080/saveError.php";
+    //     }
         
-        // window.location.href=jsonfile;
-    })
+    //     // window.location.href=jsonfile;
+    // })
 })
 function createQuesName(type = 1) {
     var $surbox = $('<div class="sur-box">');
@@ -146,12 +146,11 @@ function generageJson() {
 
     survey.len=questions.length;
     survey.questions=questions;
+    //保存title
+    survey.title=$('.tit').text();
     obj.survey=survey;
     var json = JSON.stringify(obj);
-    console.log(obj,json);
-    $('.qrbtn').css({"display":"block"});
 
-    // console.log(json)
     saveToServer(json);
     
 }
@@ -164,9 +163,8 @@ function saveToServer(json){
             json:json
         },
         success:function(data){
-            console.log("ajax success",data);
-            var key=data.split('/')[3].split('.')[0];
-            sessionStorage.setItem("jsonfile",data);
+            console.log(data);
+            alert("Success:",data);
         },
         error:function(error){
             console.log("error");

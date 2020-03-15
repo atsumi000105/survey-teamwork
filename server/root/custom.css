@@ -41,7 +41,25 @@ header .createBtn{
     font-size: 2rem;
     /* color: #e72517; */
 }
-
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.box{
+    text-align: center;
+    height: 12rem;
+    padding: 2rem 1rem;
+    border: 1px solid #4b4b4b;
+    background: #1b1b1b;
+    margin: 1rem;
+}
+.box .qrbtn{
+    margin-top: 5rem;
+}
+.box:last-child{
+    margin-right: auto;
+}
 /*
 makeSurvey.html
 */
