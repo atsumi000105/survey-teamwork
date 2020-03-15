@@ -1,8 +1,14 @@
 <?php
 header("content-type:text/html;charset=utf-8");
 $filepath=realpath('jsonfile/');
-$fileArr=getFiles($filepath);
-echo json_encode($fileArr);
+
+if(isset($_GET['fileName'])){
+	$filename=$_GET['fileName'];
+	getFileContent($filepath,$filename);
+}else{
+	$fileArr=getFiles($filepath);
+	echo json_encode($fileArr);
+}
 ?>
 <?php
 //返回文件数组
@@ -24,4 +30,18 @@ function getFiles($filepath){
     }
     return $fileArr;
 }
+
+//返回文件内容
+function getFileContent($filepath,$filename){
+	$str="read file error";
+	 if(!file_exists($filepath)){
+        echo "not exist";
+    }
+	$file=$filepath . DIRECTORY_SEPARATOR . $filename;
+	if(is_file($file)){
+		$str=file_get_contents($file);	
+	}
+	echo $str;
+}
+	
 ?>

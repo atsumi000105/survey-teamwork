@@ -1,15 +1,18 @@
-html{
-    font-size:10px;
+html {
+    font-size: 10px;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     color: white;
 }
-body{
+
+body {
     background: #252525;
 }
-header{
+
+header {
     text-align: center;
     margin-top: 2rem;
     padding: 1rem 2rem 3rem 2rem;
@@ -17,36 +20,46 @@ header{
     color: white;
     box-sizing: border-box;
 }
-button{
+
+button {
     color: #e72517;
     padding: 1rem 2rem;
 }
-.clear{
-    clear:both;
+
+.clear {
+    clear: both;
 }
-input,textarea{
+
+input,
+textarea {
     background: #1b1b1b;
     border: 2px dashed #a0a0a0;
     color: white;
 }
+
+
 /*
 index.html
 */
-header h1{
+
+header h1 {
     font-size: 4rem;
 }
-header .createBtn{
+
+header .createBtn {
     margin: 2rem auto 0 auto;
     padding: 1rem 2rem;
     font-size: 2rem;
     /* color: #e72517; */
 }
-.flex-container{
+
+.flex-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.box{
+
+.box {
     text-align: center;
     height: 12rem;
     padding: 2rem 1rem;
@@ -54,50 +67,62 @@ header .createBtn{
     background: #1b1b1b;
     margin: 1rem;
 }
-.box .qrbtn{
+
+.box .qrbtn {
     margin-top: 5rem;
 }
-.box:last-child{
+
+.box:last-child {
     margin-right: auto;
 }
+
+
 /*
 makeSurvey.html
 */
-header h2{
+
+header h2 {
     font-size: 3rem;
 }
-header .backbtn{
+
+header .backbtn {
     color: #e72517;
     float: left;
     font-size: 1.5rem;
 }
-header .qr-code a{
+
+header .qr-code a {
     margin-right: 5rem;
     float: right;
     color: #e72517;
     font-size: 1.5rem;
     /* display: none; */
 }
-.container{
+
+.container {
     padding: 2rem 0;
 }
-.container .sidebar{
+
+.container .sidebar {
     float: left;
     width: 15rem;
     height: 100%;
     padding: 1rem 2rem;
     text-align: center;
 }
-.sidebar h3{
+
+.sidebar h3 {
     font-size: 2rem;
     margin-bottom: 3rem;
 }
-.sidebar .side-choice li{
+
+.sidebar .side-choice li {
     list-style: none;
     border: 1px solid #a0a0a0;
     background: #1b1b1b;
     margin: 2rem 1rem;
 }
+
 .side-choice li button {
     width: 100%;
     height: 100%;
@@ -105,16 +130,16 @@ header .qr-code a{
     font-size: 1.5rem;
 }
 
-.container .surveymake{
+.container .surveymake {
     padding: 2rem;
     overflow: hidden;
 }
+
 .surveymake .sur-title .title,
-div.ques-name
-{
-    background: #1b1b1b; 
+div.ques-name {
+    background: #1b1b1b;
     display: block;
-    margin:1rem 0;
+    margin: 1rem 0;
     height: 4rem;
     line-height: 2rem;
     padding: 1rem;
@@ -122,49 +147,70 @@ div.ques-name
     font-size: 1.5rem;
     border: 1px dashed #a0a0a0;
 }
-.sur-form .sur-title input{
+
+.sur-form .sur-title input {
     width: 100%;
 }
-.sur-box{
+
+.sur-box {
     border: 1px solid #ff938b;
     margin: 2rem auto;
     padding: 1rem 2rem;
 }
-div.ques-name{
+
+div.ques-name {
     width: 30rem;
     height: auto;
 }
-.ques-ans .ans-opt{
+
+.ques-ans .ans-opt {
     padding: .2rem 1rem;
     margin-left: 1rem;
     font-size: 1.8rem;
 }
-div.sur-edit{
+
+div.sur-edit {
     width: 60rem;
     border: none;
     color: #a0a0a0;
 }
-.sur-box .ques-ans label{
-    font-size: 1.5rem; 
+
+.sur-box .ques-ans label {
+    font-size: 1.5rem;
     display: block;
     margin: 2rem 0;
 }
-.sur-box label .delbtn{
+
+.sur-box label .delbtn {
     margin-right: 5rem;
     color: #e72517;
 }
+
 .sur-box .add,
-.sur-box .delitem{
+.sur-box .delitem {
     float: right;
     font-size: 1.5rem;
     margin: 0 1rem;
 }
-.postbar{
+
+.postbar {
     width: 100%;
     padding: 1rem 0;
-    text-align:center;
+    text-align: center;
 }
-.postbtn{
+
+.postbtn {
     padding: 1rem 4rem;
     font-size: 2rem;
+}
+
+.qrcode {
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+    margin: 0 auto;
+    background: #ffffff;
+    display: none;
+    border: 6px solid #e72517;
+    border-radius: 5px;
 }
