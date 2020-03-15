@@ -147,20 +147,21 @@ function generageJson() {
     survey.len=questions.length;
     survey.questions=questions;
     //保存title
-    survey.title=$('.tit').text();
+    var title=$('.tit').val();
     obj.survey=survey;
     var json = JSON.stringify(obj);
 
-    saveToServer(json);
+    saveToServer(json,title);
     
 }
 //把问卷以json格式保存到服务端
-function saveToServer(json){
+function saveToServer(json,title){
     $.ajax({
         url:"http://localhost:8080/saveJson.php",
         type:"post",    
         data:{
-            json:json
+            json:json,
+            title:title
         },
         success:function(data){
             console.log(data);
