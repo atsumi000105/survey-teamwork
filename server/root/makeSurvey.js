@@ -97,7 +97,7 @@ function generageJson() {
     var obj={};
     var date=new Date();
     var timestamp=date.getTime();
-    var survey={id:timestamp,len:0,questions:[]};
+    var survey={id:timestamp+"",len:0,questions:[]};
     
     var questions = new Array();
     $('.sur-box').each(function () {

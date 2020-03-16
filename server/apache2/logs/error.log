@@ -1,40 +1,4 @@
-[Mon Mar 16 09:42:30.847360 2020] [mpm_winnt:notice] [pid 6464:tid 888] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Mon Mar 16 09:42:30.847360 2020] [mpm_winnt:notice] [pid 6464:tid 888] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Mon Mar 16 09:42:30.847360 2020] [core:notice] [pid 6464:tid 888] AH00094: Command line: 'E:\\Git\\survey-teamwork\\server/apache2/bin/httpd_usbwv8.exe -d E:/Git/survey-teamwork/server/apache2'
-[Mon Mar 16 09:42:30.863953 2020] [mpm_winnt:notice] [pid 6464:tid 888] AH00418: Parent: Created child process 11212
-[Mon Mar 16 09:42:35.012266 2020] [mpm_winnt:notice] [pid 11212:tid 888] AH00354: Child: Starting 64 worker threads.
-[Mon Mar 16 09:42:40.952095 2020] [:error] [pid 11212:tid 1408] [client 192.168.43.18:8146] PHP Notice:  Undefined index: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 2
-[Mon Mar 16 09:42:40.953071 2020] [:error] [pid 11212:tid 1408] [client 192.168.43.18:8146] PHP Notice:  Undefined index: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 3
-[Mon Mar 16 09:44:39.291131 2020] [:error] [pid 11212:tid 1400] [client ::1:8239] PHP Notice:  Undefined index: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 2
-[Mon Mar 16 09:44:39.292104 2020] [:error] [pid 11212:tid 1400] [client ::1:8239] PHP Notice:  Undefined index: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 3
-[Mon Mar 16 09:44:43.623659 2020] [:error] [pid 11212:tid 1400] [client ::1:8249] PHP Notice:  Undefined index: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 2
-[Mon Mar 16 09:44:43.623659 2020] [:error] [pid 11212:tid 1400] [client ::1:8249] PHP Notice:  Undefined index: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 3
-[Mon Mar 16 09:44:43.624637 2020] [:error] [pid 11212:tid 1408] [client ::1:8248] PHP Notice:  Undefined index: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 2
-[Mon Mar 16 09:44:43.624637 2020] [:error] [pid 11212:tid 1408] [client ::1:8248] PHP Notice:  Undefined index: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 3
-[Mon Mar 16 09:46:27.721271 2020] [:error] [pid 11212:tid 1396] [client ::1:8369] script 'E:/Git/survey-teamwork/server/root/sendRes.php' not found or unable to stat
-[Mon Mar 16 09:46:43.056482 2020] [:error] [pid 11212:tid 1396] [client ::1:8373] PHP Notice:  Undefined index: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 2
-[Mon Mar 16 09:46:43.056482 2020] [:error] [pid 11212:tid 1396] [client ::1:8373] PHP Notice:  Undefined index: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 3
-[Mon Mar 16 09:49:27.037786 2020] [:error] [pid 11212:tid 1404] [client ::1:8435] PHP Notice:  Undefined index: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 2
-[Mon Mar 16 09:49:27.037786 2020] [:error] [pid 11212:tid 1404] [client ::1:8435] PHP Notice:  Undefined index: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 3
-[Mon Mar 16 09:49:47.623665 2020] [:error] [pid 11212:tid 1404] [client ::1:8440] PHP Notice:  Undefined index: survey in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 2
-[Mon Mar 16 09:49:47.623665 2020] [:error] [pid 11212:tid 1404] [client ::1:8440] PHP Notice:  Undefined index: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 3
-[Mon Mar 16 09:50:38.061377 2020] [:error] [pid 11212:tid 1404] [client ::1:8448] PHP Notice:  Undefined index: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 2
-[Mon Mar 16 09:50:38.061377 2020] [:error] [pid 11212:tid 1404] [client ::1:8448] PHP Notice:  Undefined index: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 3
-[Mon Mar 16 09:50:52.379241 2020] [:error] [pid 11212:tid 1404] [client ::1:8452] PHP Notice:  Undefined index: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 2
-[Mon Mar 16 09:50:52.379241 2020] [:error] [pid 11212:tid 1404] [client ::1:8452] PHP Notice:  Undefined index: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 3
-[Mon Mar 16 09:53:38.779770 2020] [:error] [pid 11212:tid 1404] [client ::1:8650] PHP Notice:  Undefined index: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 2
-[Mon Mar 16 09:53:38.779770 2020] [:error] [pid 11212:tid 1404] [client ::1:8650] PHP Notice:  Undefined index: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 3
-[Mon Mar 16 09:58:48.597813 2020] [:error] [pid 11212:tid 1404] [client ::1:8820] PHP Notice:  Undefined index: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 3
-[Mon Mar 16 09:58:48.597813 2020] [:error] [pid 11212:tid 1404] [client ::1:8820] PHP Notice:  Undefined index: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 4
-[Mon Mar 16 11:37:18.060096 2020] [:error] [pid 11212:tid 1396] [client 192.168.43.18:12807] PHP Notice:  Undefined index: answer in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 5
-[Mon Mar 16 13:05:04.419975 2020] [:error] [pid 11212:tid 1396] [client ::1:13595] PHP Notice:  Array to string conversion in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 41
-[Mon Mar 16 13:05:04.419975 2020] [:error] [pid 11212:tid 1396] [client ::1:13595] PHP Notice:  Array to string conversion in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 41
-[Mon Mar 16 13:05:04.419975 2020] [:error] [pid 11212:tid 1396] [client ::1:13595] PHP Notice:  Array to string conversion in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 41
-[Mon Mar 16 13:05:04.419975 2020] [:error] [pid 11212:tid 1396] [client ::1:13595] PHP Notice:  Array to string conversion in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 41
-[Mon Mar 16 13:05:04.419975 2020] [:error] [pid 11212:tid 1396] [client ::1:13595] PHP Notice:  Array to string conversion in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 41
-[Mon Mar 16 13:05:04.420953 2020] [:error] [pid 11212:tid 1396] [client ::1:13595] PHP Notice:  Undefined variable: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 21
-[Mon Mar 16 13:05:04.420953 2020] [:error] [pid 11212:tid 1396] [client ::1:13595] PHP Notice:  Undefined variable: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 21
-[Mon Mar 16 13:05:36.964077 2020] [:error] [pid 11212:tid 1396] [client ::1:13606] PHP Notice:  Undefined variable: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 21
-[Mon Mar 16 13:05:36.964077 2020] [:error] [pid 11212:tid 1396] [client ::1:13606] PHP Notice:  Undefined variable: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 21
-[Mon Mar 16 13:05:36.966029 2020] [:error] [pid 11212:tid 1392] [client ::1:13607] PHP Notice:  Undefined variable: survey_id in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 21
-[Mon Mar 16 13:05:36.967006 2020] [:error] [pid 11212:tid 1392] [client ::1:13607] PHP Notice:  Undefined variable: answers in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 21
+[Mon Mar 16 22:16:28.414100 2020] [mpm_winnt:notice] [pid 12208:tid 884] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Mon Mar 16 22:16:28.414100 2020] [mpm_winnt:notice] [pid 12208:tid 884] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Mon Mar 16 22:16:28.414100 2020] [core:notice] [pid 12208:tid 884] AH00094: Command line: 'E:\\Git\\survey-teamwork\\server/apache2/bin/httpd_usbwv8.exe -d E:/Git/survey-teamwork/server/apache2'
+[Mon Mar 16 22:16:28.428739 2020] [mpm_winnt:notice] [pid 12208:tid 884] AH00418: Parent: Created child process 10596
