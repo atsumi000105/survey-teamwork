@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="../../jquery-3.4.1.min.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <button onclick="post()">click</button>
@@ -12,15 +12,19 @@
 <script>
     function post(){
         $.ajax({
-        url:"http://localhost:8080/saveJson.php",  
-        // data:{
-        //     json:json
-        // },
+        url:"http://localhost:8080/saveRes.php",  
+        method:"POST",
+        data:{
+            survey_id:7758322,
+            answers:"this is a test request"
+        },
         success:function(data){
             console.log("ajax success");
+            alert("hi");
         },
         error:function(error){
             console.log("error");
+            alert("no");
         }
     })
     }
