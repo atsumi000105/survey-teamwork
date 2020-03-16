@@ -24,10 +24,13 @@ Root Site: E:\Git\survey-teamwork\server\root
 
 #### 2. Usage:
 >**website**:
+>Please open the USBWebServer.exe first, since this is a local webserver project. And make sure the Apache and Mysql both are started.
+>enter http://localhost:8080/index.html in your browser to visit the website.
 >index.html: Create->makeSurvey.html: Post->makeSurvey.html:Back to index ->index.html:scan QR code according to the title.
 
 >**android**:
 >Scan the Qr code->answer the questions->save or upload->exit
+>Make sure your phone and computer in the same LAN when you upload.
 
 **Please Never Name the Survey Title in Chinese**
 **问卷标题请不要用中文**
