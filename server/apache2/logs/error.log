@@ -2,3 +2,4 @@
 [Mon Mar 16 22:16:28.414100 2020] [mpm_winnt:notice] [pid 12208:tid 884] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
 [Mon Mar 16 22:16:28.414100 2020] [core:notice] [pid 12208:tid 884] AH00094: Command line: 'E:\\Git\\survey-teamwork\\server/apache2/bin/httpd_usbwv8.exe -d E:/Git/survey-teamwork/server/apache2'
 [Mon Mar 16 22:16:28.428739 2020] [mpm_winnt:notice] [pid 12208:tid 884] AH00418: Parent: Created child process 10596
+[Mon Mar 16 22:16:30.010831 2020] [mpm_winnt:notice] [pid 10596:tid 948] AH00354: Child: Starting 64 worker threads.

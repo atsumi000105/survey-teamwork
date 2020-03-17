@@ -1,0 +1,101 @@
+[33mcommit a7ddaecb1c9012b2cbead61451e1fee518cb0732[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: WindWaving <13833799573@163.com>
+Date:   Mon Mar 16 22:18:41 2020 +0800
+
+    update json
+
+[33mcommit 7f09780fc46d9989f75c24eb0a0e1511e24c4916[m
+Author: WindWaving <39412843+WindWaving@users.noreply.github.com>
+Date:   Mon Mar 16 20:47:50 2020 +0800
+
+    Update README.md
+
+[33mcommit 4eee016cc7a614951ef8e99ce28c9192f450849b[m
+Author: WindWaving <39412843+WindWaving@users.noreply.github.com>
+Date:   Mon Mar 16 20:36:46 2020 +0800
+
+    Update README.md
+
+[33mcommit 4c79444bbef4334e9b66ee6ea42eee3237db95c1[m
+Author: WindWaving <13833799573@163.com>
+Date:   Mon Mar 16 20:22:34 2020 +0800
+
+    android:upload and exit
+
+[33mcommit 936dea1d1f19617df3e7c4f359a8e92bb54b614f[m
+Author: WindWaving <13833799573@163.com>
+Date:   Mon Mar 16 16:50:17 2020 +0800
+
+    unlock part
+
+[33mcommit 4e75e41d11c34d1e2d669ea88bf6b1e51bf26e4b[m
+Author: WindWaving <13833799573@163.com>
+Date:   Mon Mar 16 13:41:02 2020 +0800
+
+    android apk:upload data
+
+[33mcommit 3e85cef1ffba58a88db49b4cff3fea71a35bdae4[m
+Author: WindWaving <13833799573@163.com>
+Date:   Mon Mar 16 13:36:50 2020 +0800
+
+    update server -save database
+
+[33mcommit c3446f9bc6674de3faec688310065d594ad19333[m
+Author: WindWaving <13833799573@163.com>
+Date:   Mon Mar 16 13:36:00 2020 +0800
+
+    update server --upload data
+
+[33mcommit afe74953a24eb3a6e34671a5759ebd849672d997[m
+Author: WindWaving <13833799573@163.com>
+Date:   Sun Mar 15 16:13:41 2020 +0800
+
+    remove extra zip file
+
+[33mcommit 9e8777382ee98efb92600927ca55f3a04f805a4d[m
+Author: WindWaving <13833799573@163.com>
+Date:   Sun Mar 15 16:10:01 2020 +0800
+
+    update website 5:json express
+
+[33mcommit 65768246dbd18d3928b714219a18493f9aa53836[m
+Author: WindWaving <13833799573@163.com>
+Date:   Sun Mar 15 12:39:06 2020 +0800
+
+    update website4
+
+[33mcommit e6f4a2f226cd844fd58977f428a69e877e979fd9[m
+Author: WindWaving <13833799573@163.com>
+Date:   Sun Mar 15 11:49:19 2020 +0800
+
+    update readme
+
+[33mcommit ff5a5add68c3914e3f4818ef5bfdda05c5f98ec6[m
+Author: WindWaving <13833799573@163.com>
+Date:   Sun Mar 15 11:34:22 2020 +0800
+
+    website update3
+
+[33mcommit fd8a5c2fa84fcf9598ec7f2fbfc814e80a4392b5[m
+Author: WindWaving <13833799573@163.com>
+Date:   Sat Mar 14 23:06:58 2020 +0800
+
+    website update2
+
+[33mcommit 695d166aa868aeb46bb546c1917804f96836e42a[m
+Author: WindWaving <13833799573@163.com>
+Date:   Sat Mar 14 21:26:42 2020 +0800
+
+    website
+
+[33mcommit 40d9c357115b51c852274158e62c0ded9bad8787[m
+Author: WindWaving <13833799573@163.com>
+Date:   Sat Mar 14 21:18:30 2020 +0800
+
+    website
+
+[33mcommit 9bda5272623d5b65ff91f73e5444c46a9e85affd[m
+Author: WindWaving <39412843+WindWaving@users.noreply.github.com>
+Date:   Fri Mar 13 21:59:12 2020 +0800
+
+    Initial commit
