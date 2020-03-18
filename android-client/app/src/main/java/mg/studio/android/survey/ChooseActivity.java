@@ -178,7 +178,7 @@ public class ChooseActivity extends AppCompatActivity {
 
     //展示编辑界面
     private void ShowEdit() throws JSONException {
-        style="edit";
+        style="edittext";
         int quesnum=current+1;
         String ques=Jo.getString("question");
         System.out.println("当前可编辑问题的题目是"+ques);
@@ -217,7 +217,6 @@ public class ChooseActivity extends AppCompatActivity {
                 }
             }else{
                 saveAnswer+="}";
-                System.out.println("保存在saveAnswer中的数据为"+saveAnswer);
                 setContentView(R.layout.finish_jsonsurvey);
             }
         }else{
