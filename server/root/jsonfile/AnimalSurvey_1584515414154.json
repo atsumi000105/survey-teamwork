@@ -1,0 +1,1 @@
+{"survey":{"id":"1584515414154","len":3,"questions":[{"type":"single","question":"Do you like animals?","options":[{"1":"yes"},{"2":"no"}]},{"type":"multiple","question":"Which kinds of animals do you have?","options":[{"1":"cat"},{"2":"dog"},{"3":"horse"},{"4":"pig"}]},{"type":"edittext","question":"Do you have any advice?","options":[]}]}}

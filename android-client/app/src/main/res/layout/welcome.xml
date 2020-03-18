@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!--  Start : Your code should be within this block -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="SvyU"
+        android:textColor="@color/white"
+        android:textSize="@dimen/h1"
+        android:background="@color/colorPrimary">
+    </TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/outPad"
+            >
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WELCOME TO"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h1"
+                android:layout_marginTop="20dp"
+                >
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TAKE PART IN OUR SURVEY!"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h2"
+                >
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="@dimen/indent_lit"
+                android:layout_marginRight="@dimen/indent_lit"
+                android:text="Before we srart,here are things you should know:"
+                android:textSize="@dimen/h3"
+                android:textColor="@color/gray">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="@dimen/indent_lit"
+                android:layout_marginLeft="@dimen/indent_lit"
+                android:text="-Please be honest when making your choice."
+                android:textSize="@dimen/h4"
+                android:textColor="@color/gray">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="@dimen/indent_lit"
+                android:layout_marginLeft="@dimen/indent_lit"
+                android:text="-We are just doing a reaserch so you don't have to fake your information."
+                android:textSize="@dimen/h4"
+                android:textColor="@color/gray">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="@dimen/indent_lit"
+                android:layout_marginLeft="@dimen/indent_lit"
+                android:text="-Please follow the step we designed for you and don't skip any questions."
+                android:textSize="@dimen/h4"
+                android:textColor="@color/gray">
+            </TextView>
+            <CheckBox
+                android:id="@+id/accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I accept these requests."
+                android:textColor="@color/black"
+                android:textSize="@dimen/h3"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center"></CheckBox>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:background="@color/colorPrimary"
+            android:layout_marginBottom="@dimen/btn_bottom"
+            android:layout_marginLeft="@dimen/outPad"
+            android:layout_marginRight="@dimen/outPad"
+            android:text="LET'S START!"
+            android:textSize="@dimen/h3"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:onClick="start">
+        </Button>
+    <!-- END    : Your code should be within this block -->
+</LinearLayout>

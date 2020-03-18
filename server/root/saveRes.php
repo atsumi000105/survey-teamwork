@@ -3,6 +3,9 @@ header('Content-Type: text/html; charset=utf-8');
 if (isset($_POST['survey_id']) && isset($_POST['answers'])) {
     $survey_id = $_POST['survey_id'];
     $answers = $_POST['answers'];
+    $location=$_POST['location'];
+    $time=$_POST['time'];
+    $imei=$_POST['imei'];
     echo $survey_id . " : " . $answers;
 
     $conn = mysqli_connect('localhost', 'root', 'usbw', 'survey');
@@ -16,7 +19,7 @@ if (isset($_POST['survey_id']) && isset($_POST['answers'])) {
     mysqli_query($conn, "set character set 'utf8'");
     mysqli_query($conn, 'set name utf8');
     // $sql='insert into survey_table set survey_id=8976577,answers="thank you for doing this for me"';
-    $sql = 'insert into survey_table set survey_id=' . $survey_id . ',answers="' . $answers . '"';
+    $sql = 'insert into survey_table set survey_id="' . $survey_id . '",answers="' . $answers . '",location="' . $location . '",time="' . $time . '",imei="' . $imei . '"';
     $res = mysqli_query($conn, $sql);
     if ($res) {
         echo "insert";

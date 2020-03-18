@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--  Start : Your code should be within this block -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="SvyU"
+        android:textColor="@color/white"
+        android:textSize="@dimen/h1"
+        android:background="@color/colorPrimary">
+    </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:padding="@dimen/outPad"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/indent_lit"
+            android:text="PLEASE CHOOSE AN SURVEY"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h2"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/indent_mid"
+            android:text="LET'S BEGIN!"
+            android:layout_marginTop="@dimen/ques_to_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h1"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="60dp"
+            android:textSize="@dimen/h2"
+            android:text="Please permit openning your camera to scan the qrcode to start the survey"></TextView>
+
+    </LinearLayout>
+    <Button
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/btn_bottom"
+        android:layout_marginLeft="@dimen/outPad"
+        android:layout_marginRight="@dimen/outPad"
+        android:layout_height="@dimen/btn_height"
+        android:background="@color/colorPrimary"
+        android:textSize="@dimen/h2"
+        android:textColor="@color/white"
+        android:text="scan QRcode"
+        android:onClick="StartQRSurvey"></Button>
+
+
+
+    <!-- END    : Your code should be within this block -->
+
+</LinearLayout>
+

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!--  Start : Your code should be within this block -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="SvyU"
+        android:textColor="@color/white"
+        android:textSize="@dimen/h1"
+        android:background="@color/colorPrimary">
+    </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:padding="@dimen/outPad"
+        >
+
+        <TextView
+            android:id="@+id/EquesionNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Question "
+            android:textSize="@dimen/h1"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/indent_lit"
+            android:layout_marginTop="@dimen/indent_lit"></TextView>
+
+        <TextView
+            android:id="@+id/Equesiontext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ques_to_title"
+            android:layout_marginRight="@dimen/indent_mid"
+            android:layout_marginLeft="@dimen/indent_mid"
+            android:text="Which brand of phone will you choose if you are going to buy a new one?"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/h2"
+            ></TextView>
+
+        <EditText
+            android:id="@+id/EOption"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="@dimen/indent_mid"
+            android:layout_marginRight="@dimen/indent_mid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="@dimen/h2"
+            android:hint="enter the answer">
+        </EditText>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:background="@color/colorPrimary"
+        android:text="NEXT"
+        android:textSize="@dimen/h3"
+        android:textColor="@color/white"
+        android:layout_marginBottom="@dimen/btn_bottom"
+        android:layout_marginLeft="@dimen/outPad"
+        android:layout_marginRight="@dimen/outPad"
+        android:gravity="center"
+        android:onClick="nextque">
+    </Button>
+
+
+</LinearLayout>

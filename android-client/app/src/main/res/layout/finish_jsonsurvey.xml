@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!--  Start : Your code should be within this block -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="SvyU"
+        android:textColor="@color/white"
+        android:textSize="@dimen/h1"
+        android:background="@color/colorPrimary">
+    </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/outPad">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/indent_lar"
+            android:layout_marginTop="20dp"
+            android:text="THANK YOU"
+            android:textColor="#000000"
+            android:textSize="@dimen/h1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/indent_lar"
+            android:text="FOR YOUR ANSWERS!"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h2"></TextView>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/img_src"></ImageView>
+    </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:background="@color/colorPrimary"
+            android:text="FINISH"
+            android:textSize="@dimen/h2"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/btn_bottom"
+            android:layout_marginRight="@dimen/outPad"
+            android:layout_marginLeft="@dimen/outPad"
+            android:onClick="FinishJS">
+        </Button>
+
+
+    <!-- END    : Your code should be within this block -->
+
+</LinearLayout>
