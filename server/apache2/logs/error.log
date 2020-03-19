@@ -1,6 +1,5 @@
-[Thu Mar 19 09:48:03.857282 2020] [mpm_winnt:notice] [pid 14296:tid 908] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Thu Mar 19 09:48:03.857282 2020] [mpm_winnt:notice] [pid 14296:tid 908] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Thu Mar 19 09:48:03.858278 2020] [core:notice] [pid 14296:tid 908] AH00094: Command line: 'E:\\Git\\survey-teamwork\\server/apache2/bin/httpd_usbwv8.exe -d E:/Git/survey-teamwork/server/apache2'
-[Thu Mar 19 09:48:03.881276 2020] [mpm_winnt:notice] [pid 14296:tid 908] AH00418: Parent: Created child process 1808
-[Thu Mar 19 09:48:05.296482 2020] [mpm_winnt:notice] [pid 1808:tid 900] AH00354: Child: Starting 64 worker threads.
-[Thu Mar 19 09:52:51.920150 2020] [:error] [pid 1808:tid 1396] [client 192.168.43.1:49634] PHP Notice:  Undefined index: location in E:\\Git\\survey-teamwork\\server\\root\\saveRes.php on line 6
+[Thu Mar 19 21:26:52.609457 2020] [mpm_winnt:notice] [pid 3332:tid 624] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Thu Mar 19 21:26:52.610458 2020] [mpm_winnt:notice] [pid 3332:tid 624] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Thu Mar 19 21:26:52.610458 2020] [core:notice] [pid 3332:tid 624] AH00094: Command line: 'D:\\Survey_TEAM\\server/apache2/bin/httpd_usbwv8.exe -d D:/Survey_TEAM/server/apache2'
+[Thu Mar 19 21:26:52.626410 2020] [mpm_winnt:notice] [pid 3332:tid 624] AH00418: Parent: Created child process 9940
+[Thu Mar 19 21:26:54.610606 2020] [mpm_winnt:notice] [pid 9940:tid 880] AH00354: Child: Starting 64 worker threads.

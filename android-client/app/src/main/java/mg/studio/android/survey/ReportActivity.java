@@ -120,6 +120,7 @@ public class ReportActivity extends AppCompatActivity {
             String answer_text=answer.getString("question "+i);
 //            sb.append("question"+i+":"+answer_text+"\n");
             sb.append(quesArr[i-1]+"\n"+answer_text+"\n\n");
+            System.out.println(quesArr[i-1]);
         }
         showAnswer= (TextView)findViewById(R.id.showAnswers);
         showAnswer.setText(sb.toString());

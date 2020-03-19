@@ -49,10 +49,18 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="@dimen/indent_lit"
                 android:layout_marginRight="@dimen/indent_lit"
-                android:text="Before we srart,here are things you should know:"
+                android:text="Before we start,here are things you should know:"
                 android:textSize="@dimen/h3"
                 android:textColor="@color/gray">
             </TextView>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,17 +91,19 @@
                 android:textSize="@dimen/h4"
                 android:textColor="@color/gray">
             </TextView>
-            <CheckBox
-                android:id="@+id/accept"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="I accept these requests."
-                android:textColor="@color/black"
-                android:textSize="@dimen/h3"
-                android:layout_marginTop="50dp"
-                android:layout_gravity="center"></CheckBox>
+            </LinearLayout>
+            </ScrollView>
         </LinearLayout>
 
+    <CheckBox
+        android:id="@+id/accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I accept these requests."
+        android:textColor="@color/black"
+        android:textSize="@dimen/h3"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"></CheckBox>
         <Button
             android:layout_width="match_parent"
             android:layout_height="@dimen/btn_height"
