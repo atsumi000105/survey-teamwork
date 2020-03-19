@@ -14,9 +14,7 @@
     } else {
         echo "please set the survey_id and answers";
     }
-?> 
 
-<?php
 /*create database*/
 function createDB($username, $password, $server = "localhost", $DBname = "surveyDB")
 {
@@ -35,9 +33,7 @@ function createDB($username, $password, $server = "localhost", $DBname = "survey
         return null;
     }
 }
-?>
 
-<?php
 /*create survey table */
 function createTable($conn, $tablename = "Survey_Result", $DBname = "surveyDB")
 {
@@ -57,9 +53,7 @@ function createTable($conn, $tablename = "Survey_Result", $DBname = "surveyDB")
         echo "create table:connection is null";
     }
 }
-?>
 
-<?php
 /* insert data into table*/
 function insertData($conn, $survey_id, $answers, $location, $time, $imei, $tablename = "Survey_Result")
 {

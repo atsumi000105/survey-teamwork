@@ -9,8 +9,7 @@ if(isset($_GET['fileName'])){//for Qr code
 	$fileArr=getFiles($filepath);
 	echo json_encode($fileArr);
 }
-?>
-<?php
+
 /*
 get files saved on server as an Array
 return: array
