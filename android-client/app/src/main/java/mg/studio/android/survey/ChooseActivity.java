@@ -6,6 +6,8 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.text.InputType;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -93,7 +95,7 @@ public class ChooseActivity extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
         if (result != null){
             if (result.getContents() == null){
-                Toast.makeText(this,"取消扫描",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"Cancel the scan",Toast.LENGTH_LONG).show();
             }else {
                 Jstr=result.getContents();
                 if(Jstr.length()!=0){
@@ -107,7 +109,6 @@ public class ChooseActivity extends AppCompatActivity {
                         count=JArr.length();
                         current=0;
                         Jo=(JSONObject) JArr.get(0);
-                        System.out.println("获取的JStr"+Jstr);
                         if(Jo.getString("type").equals("single")){
                             ShowSingle();
                         }
@@ -167,7 +168,6 @@ public class ChooseActivity extends AppCompatActivity {
         Mqus.setText(ques);
         quesList.add(ques);
         for(int i=0;i<Joption.length();i++){
-            System.out.println("当前选项为"+Joption.getJSONObject(i).getString(""+(i+1)));
             CheckBox cb=new CheckBox(this);
             Moption.addView(cb);
             cb.setText(Joption.getJSONObject(i).getString(""+(i+1)));
@@ -179,11 +179,19 @@ public class ChooseActivity extends AppCompatActivity {
         style="edittext";
         int quesnum=current+1;
         String ques=Jo.getString("question");
-        System.out.println("当前可编辑问题的题目是"+ques);
         setContentView(R.layout.edit_question);
         EquesNUM=(TextView)findViewById(R.id.EquesionNum);
         Equs=(TextView)findViewById(R.id.Equesiontext);
         Eoption=(EditText) findViewById(R.id.EOption);
+
+        Eoption.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+//文本显示的位置在EditText的最上方
+        Eoption.setGravity(Gravity.TOP);
+//改变默认的单行模式
+        Eoption.setSingleLine(false);
+//水平滚动设置为False
+        Eoption.setHorizontallyScrolling(false);
+
         EquesNUM.setText("Question "+quesnum);
         Equs.setText(ques);
         quesList.add(ques);

@@ -31,17 +31,16 @@ public class MainActivity extends AppCompatActivity {
     Intent MtoC;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome);
         MtoC = new Intent(MainActivity.this, ChooseActivity.class);
-
         ApplicationUtil.getInstance().addActivity(MainActivity.this);
     }
 
 
     //Users can enter the questionnaire survey after confirming the terms
-    //Save the sample file to the sdcard
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void start(View view) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         CheckBox ac = (CheckBox) findViewById(R.id.accept);
@@ -55,12 +54,6 @@ public class MainActivity extends AppCompatActivity {
             accept.show();
         }
     }
-
-
-
-
-
-
 }
 
 
