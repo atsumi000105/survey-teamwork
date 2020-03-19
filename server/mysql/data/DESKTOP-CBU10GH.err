@@ -289,3 +289,27 @@
 2020-03-19 09:48:03 13884 [Note] IPv6 is available.
 2020-03-19 09:48:03 13884 [Note]   - '::' resolves to '::';
 2020-03-19 09:48:03 13884 [Note] Server socket created on IP: '::'.
+2020-03-19 21:10:34 2108 [Note] Plugin 'FEDERATED' is disabled.
+2020-03-19 21:10:34 2108 [Note] InnoDB: The InnoDB memory heap is disabled
+2020-03-19 21:10:34 2108 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2020-03-19 21:10:34 2108 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2020-03-19 21:10:34 2108 [Note] InnoDB: Not using CPU crc32 instructions
+2020-03-19 21:10:34 2108 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+2020-03-19 21:10:34 2108 [Note] InnoDB: Completed initialization of buffer pool
+2020-03-19 21:10:34 2108 [Note] InnoDB: Highest supported file format is Barracuda.
+2020-03-19 21:10:34 2108 [Note] InnoDB: The log sequence numbers 1626134 and 1626134 in ibdata files do not match the log sequence number 1947434 in the ib_logfiles!
+2020-03-19 21:10:34 2108 [Note] InnoDB: Database was not shutdown normally!
+2020-03-19 21:10:34 2108 [Note] InnoDB: Starting crash recovery.
+2020-03-19 21:10:34 2108 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2020-03-19 21:10:34 2108 [Note] InnoDB: Restoring possible half-written data pages 
+2020-03-19 21:10:34 2108 [Note] InnoDB: from the doublewrite buffer...
+2020-03-19 21:10:35 2108 [Note] InnoDB: 128 rollback segment(s) are active.
+2020-03-19 21:10:35 2108 [Note] InnoDB: Waiting for purge to start
+2020-03-19 21:10:35 2108 [Note] InnoDB: 5.6.13 started; log sequence number 1947434
+2020-03-19 21:10:35 2108 [Note] Server hostname (bind-address): '*'; port: 3307
+2020-03-19 21:10:35 2108 [Note] IPv6 is available.
+2020-03-19 21:10:35 2108 [Note]   - '::' resolves to '::';
+2020-03-19 21:10:35 2108 [Note] Server socket created on IP: '::'.
+2020-03-19 21:10:35 2108 [Note] Event Scheduler: Loaded 0 events
+2020-03-19 21:10:35 2108 [Note] E:\Git\survey-teamwork\server/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.6.13'  socket: ''  port: 3307  MySQL Community Server (GPL)

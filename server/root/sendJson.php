@@ -2,27 +2,27 @@
 header("content-type:text/html;charset=utf-8");
 $filepath=realpath('jsonfile/');
 
-if(isset($_GET['fileName'])){
+if(isset($_GET['fileName'])){//for Qr code
 	$filename=$_GET['fileName'];
 	getFileContent($filepath,$filename);
-}else{
+}else{//for home page
 	$fileArr=getFiles($filepath);
 	echo json_encode($fileArr);
 }
 ?>
 <?php
-//返回文件数组
+/*
+get files saved on server as an Array
+return: array
+*/
 function getFiles($filepath){
     if(!file_exists($filepath)){
         return [];
     }
     $fileArr=[];
-    //切换到目录
+    //change to the dir
     chdir($filepath);
     foreach(glob('*.json') as $file){
-        // $file=mb_convert_encoding($file,"GBK","auto");
-        // echo $file;
-        //json文件的路径 
         $path=$filepath . DIRECTORY_SEPARATOR . $file;
         if(is_file($path)){
             $fileArr[]=$path;
@@ -31,7 +31,10 @@ function getFiles($filepath){
     return $fileArr;
 }
 
-//返回文件内容
+/*
+get file contents as string
+return:string
+*/
 function getFileContent($filepath,$filename){
 	$str="read file error";
 	 if(!file_exists($filepath)){

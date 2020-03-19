@@ -1,14 +1,15 @@
 $(window).on('load', function () {
     getSurveys();
 })
-//向后端请求获取文件
+/*
+get survey files saved in DB to show in boxes
+*/
 function getSurveys() {
     $.ajax({
         url: "http://localhost:8080/sendJson.php",
         success: function (data) {
-            //data为String类型
             var arr = data.split('"');
-            var fileArr = []; //文件名
+            var fileArr = []; //file array
             for (let i = 1; i < arr.length; i += 2) {
                 fileArr.push(arr[i]);
             }
@@ -18,10 +19,12 @@ function getSurveys() {
         }
     })
 }
-//动态创建
+/*
+func:create a box to show a survey
+params:the filename of a survey
+*/
 function createBox(value) {
     var filename = value.split('\\').slice(-1)[0];
-    //var fileurl = "http://localhost:8080/jsonfile/" + filename;
     var surveyTitle = filename.split('_')[0];
     var $box = $('<div class="box"></div>');
     var $title = $('<h1>' + surveyTitle + '</h1>');
@@ -29,14 +32,17 @@ function createBox(value) {
     var $qrbtn = $('<button class="qrbtn">Scan QRcode</button>');
     $box.append($qrbtn);
     $(".flex-container").append($box);
-    //二维码扫描事件
+
+    //Here is the btn to show QR code
     $qrbtn.click(function () {
-        // console.log(fileurl);
         getJsonFile(filename);
-        //createQRspace(fileurl);
     })
 }
-//获取文件内容
+
+/*
+func:get file of a survey from server
+params:filename saved in server
+*/
 function getJsonFile(filename) {
     $.ajax({
         url: "http://localhost:8080/sendJson.php",
@@ -44,12 +50,14 @@ function getJsonFile(filename) {
             fileName: filename
         },
         success: function (data) {
-            console.log(data);
             createQRspace(data);
         }
     })
 }
-//生成二维码显示区
+/*
+func:create div to show QR code
+params:json string of a survey
+*/
 function createQRspace(json) {
     $('.qrcode').css({ "display": "block" });
     $('.qrcode').empty();

@@ -4,18 +4,20 @@ header('Access-Control-Allow-Methods:POST');
 header("content-type:text/html;charset=utf-8");
 $str=$_POST['json'];
 $title=$_POST['title'];
-//保存文件
 $arr=json_decode($str,true);
 $id=$arr['survey']['id'];
-//去掉title的空格且首字母大写
+//rid the spaces and Capitalize(the filename can't have spaces)
 $title=camel_case($title);
-$jsonfile="jsonfile/" . $title . "_" . $id . ".json";
+$jsonfile="jsonfile/" . $title . "_" . $id . ".json";//filename:surveyTitle_surveyId.json
 file_put_contents($jsonfile,$str);
-$fileurl="http://localhost:8080/" . $jsonfile;
-echo "The server saved " . $fileurl;
+// $fileurl="http://localhost:8080/" . $jsonfile;
+// echo "The server saved " . $fileurl;
 exit();
 ?>
 <?php
+/*
+func:rid the spaces and Capitalize
+*/
 function camel_case($s) 
 {
     $upper_case = ucwords($s);

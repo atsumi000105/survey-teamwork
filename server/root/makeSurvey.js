@@ -1,5 +1,6 @@
 $(window).on('load', function () {
-    //选择题按钮点击事件
+
+    //questionType buttons event
     $('.sinbtn').on('click', function () {
         var $quesans = createQuesName();
         $quesans.siblings('.add').click(function () {
@@ -17,23 +18,15 @@ $(window).on('load', function () {
         addEdt($quesans);
     })
 
-    //发布按钮点击事件
+    //the event for POST button
     $('.postbtn').on('click', function () {
         generageJson();
     })
-    // //扫描二维码事件
-    // $('.qrbtn').on('click',function(){
-    //     //jsonfile是json文件的保存地址
-    //     var jsonfile="";
-    //     if(sessionStorage.getItem('jsonfile')!=null){
-    //         jsonfile=sessionStorage.getItem('jsonfile');
-    //     }else{
-    //         jsonfile="http://localhost:8080/saveError.php";
-    //     }
-        
-    //     // window.location.href=jsonfile;
-    // })
 })
+/*
+func:create question names
+params:question type:choose questions=1,filling questions=others; DEFAULT=1
+*/
 function createQuesName(type = 1) {
     var $surbox = $('<div class="sur-box">');
     var $quesname = $('<div class="ques-name" contenteditable="true">Please Write Your Question</div>');
@@ -54,6 +47,10 @@ function createQuesName(type = 1) {
     $('.sur-form').append($surbox);
     return $quesans;
 }
+/*
+func: dynamically add single options
+params:the div to add options
+*/
 function addSingleOpt($quesans) {
     var $label = $('<label></label>');
     var $delbtn = $('<a class="delbtn" href="javascript:void(0)">delete</a>');
@@ -67,6 +64,10 @@ function addSingleOpt($quesans) {
         delChoice($(this));
     })
 }
+/*
+func: dynamically add multiple options
+params:the div to add options
+*/
 function addMultiOpt($quesans) {
     var $label = $('<label></label>');
     var $delbtn = $('<a class="delbtn" href="javascript:void(0)">delete</a>');
@@ -80,19 +81,31 @@ function addMultiOpt($quesans) {
         delChoice($(this));
     })
 }
+/*
+func: dynamically add edittext
+params:the div to add options
+*/
 function addEdt($quesans) {
     var $edt = $('<div class="ques-name sur-edit">This is the answer area</div>');
     $quesans.append($edt);
 }
-//删除一个选项，即一个label
+/*
+func:delete a option:label
+params:the obj to delete
+*/
 function delChoice($this) {
     $this.parent('label').remove();
 }
-//删除一个问题，即一个sur-box
+/*
+func:delete a question:sur-box
+params:the obj to delete
+*/
 function delQuestion($this){
     $this.parents('.sur-box').remove();
 }
-//将问卷生成json格式保存
+/*
+func:generate json from the survey and send to server
+*/
 function generageJson() {
     var obj={};
     var date=new Date();
@@ -103,10 +116,11 @@ function generageJson() {
     $('.sur-box').each(function () {
         var aQues = { type: "no", question: "no", options: [] };
 
-        //获取问题类型，找到input[type='']
+        //get question type
         var $inputtype = $(this).children('.ques-ans').find('input');
         var $edittype = $(this).children('.ques-ans').find('.sur-edit');
-        //判断是否为edit元素
+
+        /*add question type to AQues based on diff type*/
         if ($edittype.length > 0) {
             aQues.type = "edittext";
         } else {
@@ -124,12 +138,11 @@ function generageJson() {
         }
 
 
-        //问题名称
+        /*add question name to AQues*/
         aQues.question = $(this).children('.ques-name').text();
-        //问题选项
+        
+        /*add options to AQues based on diff type(only choose type)*/
         var id = 1;
-
-        //单选和多选
         var $quesopts = $(this).children('.ques-ans').find('.ans-opt');
         if ($quesopts.length > 0) {
             $quesopts.each(function () {
@@ -138,7 +151,7 @@ function generageJson() {
                 aQues.options.push(aOpt);
             })
         }
-        /*到此完成了一个问题的内容   */
+        /*a survey json is done: aQues */
 
         questions.push(aQues);
 
@@ -146,15 +159,18 @@ function generageJson() {
 
     survey.len=questions.length;
     survey.questions=questions;
-    //保存title
-    var title=$('.tit').val();
+    
+    var title=$('.tit').val();//save the title to save as filename and show in home page
     obj.survey=survey;
     var json = JSON.stringify(obj);
 
     saveToServer(json,title);
     
 }
-//把问卷以json格式保存到服务端
+/*
+func:save the file to server
+params:json string of a survey,title of a survey
+*/
 function saveToServer(json,title){
     $.ajax({
         url:"http://localhost:8080/saveJson.php",
@@ -164,8 +180,9 @@ function saveToServer(json,title){
             title:title
         },
         success:function(data){
-            console.log(data);
-            alert("Success:",data);
+            if(confirm("Saved Successful! Do you want to leave for Home Page?")){
+                window.location.href="index.html";
+            }
         },
         error:function(error){
             console.log("error");
