@@ -42,7 +42,7 @@ public class DatabaseOperator {
 
 
     //显示所有数据库中的信息
-   /* public String find(){
+    public String find(){
         String result="";
         Cursor cursor=db.query("Survey_Result",null,null,null,null,null,null,null);
         if(cursor.getCount()==0){
@@ -66,6 +66,6 @@ public class DatabaseOperator {
         }
         cursor.close();
         return result;
-    }*/
+    }
 
 }

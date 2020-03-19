@@ -17,9 +17,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.telephony.TelephonyManager;
+import android.text.method.ScrollingMovementMethod;
 import android.util.JsonReader;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +47,7 @@ public class ReportActivity extends AppCompatActivity {
     String IMEI;
     String ANSWER;
     DatabaseOperator dataOP;
+    EditText IP;
     //授权信息
     private static String[] PERMISSION = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -101,7 +104,7 @@ public class ReportActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
+        showAnswer.setMovementMethod(ScrollingMovementMethod.getInstance());
         ApplicationUtil.getInstance().addActivity(ReportActivity.this);
 
     }
@@ -134,11 +137,14 @@ public class ReportActivity extends AppCompatActivity {
         DATA_TIME=getTime();
         Toast.makeText(this, SURVEY_ID+"\n"+LOCATION+"\n"+DATA_TIME+"\n"+IMEI, Toast.LENGTH_SHORT).show();
         dataOP.add(SURVEY_ID,ANSWER,LOCATION,DATA_TIME,IMEI);
-        /*把数据库中的信息全部展示到showanswer中*/
-//        showAnswer.setText(dataOP.find());
+        /*String result=dataOP.find();
+        showAnswer.setText(result);*/
 
         /*上传数据到服务端*/
-        String url = "http://192.168.43.18:8080/saveRes.php";
+        IP=findViewById(R.id.ip_computer);
+        String IP_computer=IP.getText().toString();
+       /* String url = "http://192.168.43.18:8080/saveRes.php";*/
+        String url="http://"+IP_computer+":8080/saveRes.php";
         JSONObject jsonobj=new JSONObject();//包装数据为json对象
         String ans=ANSWER.replaceAll("\"","");
         try{
@@ -249,8 +255,8 @@ public class ReportActivity extends AppCompatActivity {
             lm = (LocationManager) getSystemService(LOCATION_SERVICE);
             lm.requestLocationUpdates(
                     LocationManager.GPS_PROVIDER,
-                    3000,
-                    10,
+                    1000,
+                    1,
                     new LocationListener() {
                         @Override
                         public void onLocationChanged(Location location) {
@@ -267,6 +273,7 @@ public class ReportActivity extends AppCompatActivity {
                     }
             );
             location = lm.getLastKnownLocation((LocationManager.GPS_PROVIDER));
+            System.out.println("获取位置信息");
 
             if (location != null) {
                 StringBuilder sb = new StringBuilder();
