@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.CheckBox;
@@ -25,14 +24,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ChooseActivity extends AppCompatActivity {
@@ -48,6 +42,7 @@ public class ChooseActivity extends AppCompatActivity {
     EditText Eoption;
     String style;
     String saveAnswer;
+    List<String> quesList;
     int count;
     int current;
     JSONArray JArr;
@@ -74,6 +69,7 @@ public class ChooseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose);
+        quesList=new ArrayList();
         style="";
         saveAnswer="{";
         CtoR=new Intent(this,ReportActivity.class);
@@ -147,6 +143,7 @@ public class ChooseActivity extends AppCompatActivity {
         Soption.removeAllViewsInLayout(); //清空原有选项
         SquesNUM.setText("Question "+quesnum);
         Squs.setText(ques);
+        quesList.add(ques);
         for(int i=0;i<Joption.length();i++){
             RadioButton rb=new RadioButton(this);
             Soption.addView(rb);
@@ -168,6 +165,7 @@ public class ChooseActivity extends AppCompatActivity {
         Moption.removeAllViewsInLayout(); //清空原有选项
         MquesNUM.setText("Question "+quesnum);
         Mqus.setText(ques);
+        quesList.add(ques);
         for(int i=0;i<Joption.length();i++){
             System.out.println("当前选项为"+Joption.getJSONObject(i).getString(""+(i+1)));
             CheckBox cb=new CheckBox(this);
@@ -188,6 +186,7 @@ public class ChooseActivity extends AppCompatActivity {
         Eoption=(EditText) findViewById(R.id.EOption);
         EquesNUM.setText("Question "+quesnum);
         Equs.setText(ques);
+        quesList.add(ques);
     }
 
     //开始下一个问题
@@ -272,6 +271,10 @@ public class ChooseActivity extends AppCompatActivity {
         CtoR.putExtra("answerJSON",saveAnswer);
         CtoR.putExtra("count",count);
         CtoR.putExtra("survey_id",Survey_id);
+        //把queslist转化成array
+        String[] quesArr=quesList.toArray(new String[quesList.size()]);
+        CtoR.putExtra("quesArr",quesArr);
+
         startActivity(CtoR);
     }
 

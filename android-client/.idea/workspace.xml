@@ -10,20 +10,34 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82ce1556-f56a-4338-9c43-0b73a510c9f5" name="Default Changelist" comment="添加了用户输入本地服务器的IP地址的编辑框">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
+    <list default="true" id="82ce1556-f56a-4338-9c43-0b73a510c9f5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mg/studio/android/survey/ChooseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mg/studio/android/survey/ChooseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mg/studio/android/survey/ReportActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mg/studio/android/survey/ReportActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/apache2/conf/httpd.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../server/apache2/conf/httpd.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/apache2/logs/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/../server/apache2/logs/access.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/apache2/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../server/apache2/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/apache2/logs/httpd.pid" beforeDir="false" afterPath="$PROJECT_DIR$/../server/apache2/logs/httpd.pid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/mysql/data/SC-202003101258.err" beforeDir="false" afterPath="$PROJECT_DIR$/../server/mysql/data/SC-202003101258.err" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/mysql/data/SC-202003101258.pid" beforeDir="false" afterPath="$PROJECT_DIR$/../server/mysql/data/SC-202003101258.pid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/mysql/data/DESKTOP-CBU10GH.err" beforeDir="false" afterPath="$PROJECT_DIR$/../server/mysql/data/DESKTOP-CBU10GH.err" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/mysql/data/DESKTOP-CBU10GH.pid" beforeDir="false" afterPath="$PROJECT_DIR$/../server/mysql/data/DESKTOP-CBU10GH.pid" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/mysql/data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/../server/mysql/data/ib_logfile0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/mysql/data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/../server/mysql/data/ibdata1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/mysql/data/mysql/innodb_index_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/../server/mysql/data/mysql/innodb_index_stats.ibd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/mysql/data/mysql/innodb_table_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/../server/mysql/data/mysql/innodb_table_stats.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/mysql/data/mysql/user.MYD" beforeDir="false" afterPath="$PROJECT_DIR$/../server/mysql/data/mysql/user.MYD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/mysql/data/mysql/user.MYI" beforeDir="false" afterPath="$PROJECT_DIR$/../server/mysql/data/mysql/user.MYI" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/mysql/data/survey/survey_table.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/../server/mysql/data/survey/survey_table.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/mysql/my.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../server/mysql/my.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/php/php.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../server/php/php.ini" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +45,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="2XT0219922001720" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Android29_Pixel2" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
