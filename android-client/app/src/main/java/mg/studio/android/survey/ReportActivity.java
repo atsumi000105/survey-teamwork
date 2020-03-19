@@ -46,6 +46,7 @@ public class ReportActivity extends AppCompatActivity {
     String SURVEY_ID;
     String IMEI;
     String ANSWER;
+    String []quesArr;
     DatabaseOperator dataOP;
     EditText IP;
     //授权信息
@@ -98,6 +99,7 @@ public class ReportActivity extends AppCompatActivity {
         count=getAnswer.getIntExtra("count",0);
         ANSWER=getAnswer.getStringExtra("answerJSON");
         SURVEY_ID=getAnswer.getStringExtra("survey_id");
+        quesArr=getAnswer.getStringArrayExtra("quesArr");//获取问题列表
         dataOP=new DatabaseOperator(this);
         try {
             ShowAnswer();
@@ -116,7 +118,8 @@ public class ReportActivity extends AppCompatActivity {
         StringBuilder sb=new StringBuilder();
         for(int i=1;i<=count;i++){
             String answer_text=answer.getString("question "+i);
-            sb.append("question"+i+":"+answer_text+"\n");
+//            sb.append("question"+i+":"+answer_text+"\n");
+            sb.append(quesArr[i-1]+"\n"+answer_text+"\n\n");
         }
         showAnswer= (TextView)findViewById(R.id.showAnswers);
         showAnswer.setText(sb.toString());
@@ -126,7 +129,7 @@ public class ReportActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void UPLOAD(View view) throws IOException {
-       /* saveResultFile(Answer);*/
+       /* 保存到本地数据库;*/
         try {
             String[] imei=getIMEI();
             IMEI=imei[0]+","+imei[1];
@@ -135,15 +138,14 @@ public class ReportActivity extends AppCompatActivity {
         }
         LOCATION=getLocation();
         DATA_TIME=getTime();
-        Toast.makeText(this, SURVEY_ID+"\n"+LOCATION+"\n"+DATA_TIME+"\n"+IMEI, Toast.LENGTH_SHORT).show();
         dataOP.add(SURVEY_ID,ANSWER,LOCATION,DATA_TIME,IMEI);
         /*String result=dataOP.find();
         showAnswer.setText(result);*/
 
+
         /*上传数据到服务端*/
         IP=findViewById(R.id.ip_computer);
         String IP_computer=IP.getText().toString();
-       /* String url = "http://192.168.43.18:8080/saveRes.php";*/
         String url="http://"+IP_computer+":8080/saveRes.php";
         JSONObject jsonobj=new JSONObject();//包装数据为json对象
         String ans=ANSWER.replaceAll("\"","");
