@@ -50,7 +50,7 @@ public class ReportActivity extends AppCompatActivity {
     String []quesArr;
     DatabaseOperator dataOP;
     EditText IP;
-    //授权信息
+    //Permissions
     private static String[] PERMISSION = {
             Manifest.permission.READ_PHONE_STATE,
             Manifest.permission.ACCESS_FINE_LOCATION,
@@ -58,7 +58,7 @@ public class ReportActivity extends AppCompatActivity {
     };
     private static int PERMISSION_CODE = 1;
 
-    //允许获得授权
+    //get permissions
     public void getPermission(){
         if ((ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
                 != PackageManager.PERMISSION_GRANTED)||(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -95,7 +95,7 @@ public class ReportActivity extends AppCompatActivity {
         count=getAnswer.getIntExtra("count",0);
         ANSWER=getAnswer.getStringExtra("answerJSON");
         SURVEY_ID=getAnswer.getStringExtra("survey_id");
-        quesArr=getAnswer.getStringArrayExtra("quesArr");//获取问题列表
+        quesArr=getAnswer.getStringArrayExtra("quesArr");//get questions
         dataOP=new DatabaseOperator(this);
         try {
             ShowAnswer();
@@ -107,7 +107,7 @@ public class ReportActivity extends AppCompatActivity {
 
     }
 
-    //展示答案到界面中去
+    //show the answer
     public void ShowAnswer() throws JSONException {
         getAnswer=getIntent();
         JSONObject answer=new JSONObject(ANSWER);
@@ -122,12 +122,12 @@ public class ReportActivity extends AppCompatActivity {
         showAnswer.setText(sb.toString());
     }
 
-    //上传数据函数
+    //upload
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void UPLOAD(View view) throws IOException {
         getPermission();
-       /* 保存到本地数据库;*/
+       /* save to local database;*/
         try {
             String[] imei=getIMEI();
             IMEI=imei[0]+","+imei[1];
@@ -141,11 +141,11 @@ public class ReportActivity extends AppCompatActivity {
         showAnswer.setText(result);*/
 
 
-        /*上传数据到服务端*/
+        /*update to the server*/
         IP=findViewById(R.id.ip_computer);
         String IP_computer=IP.getText().toString();
         String url="http://"+IP_computer+"/saveRes.php";
-        JSONObject jsonobj=new JSONObject();//包装数据为json对象
+        JSONObject jsonobj=new JSONObject();
         String ans=ANSWER.replaceAll("\"","");
         try{
             jsonobj.put("survey_id",SURVEY_ID);
@@ -162,7 +162,7 @@ public class ReportActivity extends AppCompatActivity {
 
     }
 
-    //退出程序函数
+    //exit the app
     public void EXIT(View view){
         LockUtil.getInstance().unLock(this,ReportActivity.this);
     }
@@ -170,20 +170,20 @@ public class ReportActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100) {
-            // 解锁成功
+            // unlock success
             if (resultCode == RESULT_OK) {
-                //关闭程序
+                //exit
                 Toast.makeText( this, "Exit the APP", Toast.LENGTH_SHORT).show();
                 ApplicationUtil.getInstance().exit();
             } else {
-                // 解锁失败或者取消解锁
+                // unlock failed
                 Toast.makeText(this, "Canceled", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
 
-    //保存文件函数
+    //save file in database
     public void saveResultFile(String msg) throws IOException {
         File sdFile = Environment.getExternalStorageDirectory();
         File result = new File(sdFile, "result.json");
@@ -204,7 +204,7 @@ public class ReportActivity extends AppCompatActivity {
     }
 
 
-    //获取两个imei,有的手机有双sim卡
+    //get imei
     @RequiresApi(api = Build.VERSION_CODES.O)
     public String[] getIMEI() throws Exception {
         String[] imei=new String[]{"null","null"};
@@ -222,7 +222,7 @@ public class ReportActivity extends AppCompatActivity {
             }catch (Exception e){
                 return imei;
             }
-            //获取第二个imei
+            //get the second imei(if have one)
             try{
                 Method method = tm.getClass().getMethod("getImei", int.class);
                 imei[1] = (String) method.invoke(tm, 1);
@@ -233,16 +233,16 @@ public class ReportActivity extends AppCompatActivity {
         }
     }
 
-    //获取时间和日期
+    //get timestamp
     public String getTime() {
-        double time = System.currentTimeMillis();//得到格林尼治时间
+        double time = System.currentTimeMillis();
         String TIME=String.valueOf(time);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd-");
         Date date = new Date(System.currentTimeMillis());
         return simpleDateFormat.format(date)+TIME;
     }
 
-    //获取位置信息
+    //get location
     public String getLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED &&

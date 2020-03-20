@@ -67,13 +67,13 @@ public class ChooseActivity extends AppCompatActivity {
     }
 
 
-    //开始扫描二维码答题
+    //scan code
     public void StartQRSurvey(View view) throws IOException {
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
-        //开始扫描
+        //scan
         intentIntegrator.initiateScan();
     }
-    //获取解析结果
+    //get result
     protected void onActivityResult(int requestCode, int resultCode, Intent data)  {
 
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
@@ -114,7 +114,7 @@ public class ChooseActivity extends AppCompatActivity {
     }
 
 
-    //展示单选界面
+    //single questions
     private void ShowSingle() throws JSONException {
         style="single";
         int quesnum=current+1;
@@ -136,7 +136,7 @@ public class ChooseActivity extends AppCompatActivity {
         }
     }
 
-    //展示多选界面
+    //multiple questions
     private void ShowMultiple() throws JSONException {
         style="multiple";
         int quesnum=current+1;
@@ -158,7 +158,7 @@ public class ChooseActivity extends AppCompatActivity {
         }
     }
 
-    //展示编辑界面
+    //filling questions
     private void ShowEdit() throws JSONException {
         style="edittext";
         int quesnum=current+1;
@@ -169,11 +169,8 @@ public class ChooseActivity extends AppCompatActivity {
         Eoption=(EditText) findViewById(R.id.EOption);
 
         Eoption.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
-//文本显示的位置在EditText的最上方
         Eoption.setGravity(Gravity.TOP);
-//改变默认的单行模式
         Eoption.setSingleLine(false);
-//水平滚动设置为False
         Eoption.setHorizontallyScrolling(false);
 
         EquesNUM.setText("Question "+quesnum);
@@ -181,7 +178,7 @@ public class ChooseActivity extends AppCompatActivity {
         quesList.add(ques);
     }
 
-    //开始下一个问题
+    //next question
     public void nextque(View view) throws JSONException {
         Boolean flag=false;
         if(style.equals("single")){
@@ -215,12 +212,12 @@ public class ChooseActivity extends AppCompatActivity {
         }
     }
 
-    //保存单选界面答案
+    //save single
     private Boolean saveSingleAnswer() {
         for (int i = 0; i < Soption.getChildCount(); i++) {
             RadioButton rb = (RadioButton) Soption.getChildAt(i);
             if (rb.isChecked()) {
-                //设置saveAnswer的值
+
                 saveAnswer += "\"question "+(current+1)+"\":\"" + rb.getText().toString() + "\"";
                 return true;
             }
@@ -228,7 +225,7 @@ public class ChooseActivity extends AppCompatActivity {
         return false;
     }
 
-    //保存多选界面答案
+    //save multiple
     private Boolean saveMultipleAnswer() {
         String str = "";
         int count = 0;
@@ -239,18 +236,18 @@ public class ChooseActivity extends AppCompatActivity {
                 str += cb.getText() + ";";
             }
         }
-        //设置saveAnswer的值
+
         saveAnswer += "\"question "+(current+1)+"\":\"" + str + "\"";
         if (count != 0)
         {return true;}else{
             return false;
         }
     }
-    //保存编辑界面答案
+    //save edit
     private Boolean saveEditAnswer() {
         String str = Eoption.getText().toString();
         if (str.length() != 0) {
-            //设置saveAnswer的值
+
             saveAnswer += "\"question "+(current+1)+"\":\"" + str + "\"";
             return true;
         } else{
@@ -258,7 +255,7 @@ public class ChooseActivity extends AppCompatActivity {
     }
 
 
-    //跳转到结果页
+    //jump to finish
     public void FinishJS(View view) throws IOException {
         CtoR.putExtra("answerJSON",saveAnswer);
         CtoR.putExtra("count",count);
