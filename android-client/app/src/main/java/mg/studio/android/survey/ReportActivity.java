@@ -91,6 +91,7 @@ public class ReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
+        getPermission();
         getAnswer=getIntent();
         count=getAnswer.getIntExtra("count",0);
         ANSWER=getAnswer.getStringExtra("answerJSON");
@@ -126,7 +127,7 @@ public class ReportActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void UPLOAD(View view) throws IOException {
-        getPermission();
+//        getPermission();
        /* save to local database;*/
         try {
             String[] imei=getIMEI();
