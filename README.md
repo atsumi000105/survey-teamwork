@@ -8,6 +8,7 @@
 - [Usage](#Usage)
 - [Note](#Note)
 - [Team](#Team)
+- [Code](#Code)
 - [Contract](#Contract)
 
 ## <span id="Installation"> Installation</span>
@@ -33,44 +34,42 @@
 - **Please make sure your phone and computer in the same LAN when you test on local server**
 
 ## <span id="Team">Team</span>
-|[Cherry_20176134](https://github.com/WindWaving)|[Cynthia_20175980](https://github.com/Cynthia879)|[Geralt_20175990](https://github.com/LuSylvia)|
-|--|--|--|
-|[![](https://avatars2.githubusercontent.com/u/39412843?s=200&u=43dab9aa9249a5abf54014813e8a9c5f7b9b9272&v=4)](https://github.com/WindWaving/survey-teamwork)  |[![](https://avatars1.githubusercontent.com/u/61367567?s=200&v=4)](https://github.com/Cynthia879/survey-teamwork)  |[![](https://avatars2.githubusercontent.com/u/40913318?s=200&v=4)](https://github.com/LuSylvia/survey-teamwork)|
-|[https://github.com/WindWaving/survey-teamwork](https://github.com/WindWaving/survey-teamwork)|[https://github.com/Cynthia879/survey-teamwork](https://github.com/Cynthia879/survey-teamwork)|[https://github.com/LuSylvia/survey-teamwork](https://github.com/LuSylvia/survey-teamwork)|
+| [Cherry_20176134](https://github.com/WindWaving)                                                                                                             | [Cynthia_20175980](https://github.com/Cynthia879)                                                                 | [Geralt_20175990](https://github.com/LuSylvia)                                                                  |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| [![](https://avatars2.githubusercontent.com/u/39412843?s=200&u=43dab9aa9249a5abf54014813e8a9c5f7b9b9272&v=4)](https://github.com/WindWaving/survey-teamwork) | [![](https://avatars1.githubusercontent.com/u/61367567?s=200&v=4)](https://github.com/Cynthia879/survey-teamwork) | [![](https://avatars2.githubusercontent.com/u/40913318?s=200&v=4)](https://github.com/LuSylvia/survey-teamwork) |
+| [https://github.com/WindWaving/survey-teamwork](https://github.com/WindWaving/survey-teamwork)                                                               | [https://github.com/Cynthia879/survey-teamwork](https://github.com/Cynthia879/survey-teamwork)                    | [https://github.com/LuSylvia/survey-teamwork](https://github.com/LuSylvia/survey-teamwork)                      |
 
-## <span id="FAQ">FAQ</span>
-- **1.How to create my own page dynamically？**
-    - First, you have to write the XML of the page you want to create, assign an ID to the button control in the page, bind the control in the oncreate method, and then add the **onClick** attribute to the button, with the value of nextque. And a unique identifier is added to the page for representation.
-    - Then, add new judgment statements in **onActivityResult** method, such as
-       ```
-      if(Jo.getString("type").equals("YourType")){
+## <span id="Code">Code</span>
+**1.How to create my own page dynamically？**
+- First, you have to write the XML of the page you want to create, assign an ID to the button control in the page, bind the control in the oncreate method, and then add the `onClick` attribute to the button, with the value of nextque. And a unique identifier is added to the page for representation.
+- Then, add new judgment statements i`onActivityResult` method, such as
+   ```
+  if(Jo.getString("type").equals("YourType")){
+     ShowYourType();
+  }
+   ```  
+- Next, you need to judge the newly added page at thbeginning of the `nextque` method, such as
+   ```
+   public void nextque(View view) throwJSONException {
+    Boolean flag=false;
+    ......
+     if(style.equals("YourType")){
+        flag=saveYourTypeAnswer();
+     }
+    ......
+   }  
+   ```
+- Then judge whether the flag is true, and then adjudgment in the branch of `if (current + 1 < coun`, such as
+   ```
+   if(current+1<count){
+     ......
+     if(Jo.getString("type").equals("YourType")){
          ShowYourType();
-      }
-       ```  
-    - Next, you need to judge the newly added page at the beginning of the **nextque** method, such as
-       ```
-       public void nextque(View view) throws JSONException {
-        Boolean flag=false;
-        ......
-         if(style.equals("YourType")){
-            flag=saveYourTypeAnswer();
-         }
-        ......
-       }  
-       ```
-       Then judge whether the flag is true, and then add judgment in the branch of **if (current + 1 < count)**, such as
-       ```
-       if(current+1<count){
-         ......
-         if(Jo.getString("type").equals("YourType")){
-             ShowYourType();
-         }
-         ......
-       }
-       ```
-    - Finally, implement showyourtype and saveyourtypeanswer methods. There are similar methods in the source code. You can refer to them to implement your own methods.
-
-       
+     }
+     ......
+   }
+   ```
+- Finally, implement showyourtype ansaveyourtypeanswer methods. There are similar methodin the source code. You can refer to them timplement your own methods.
 
 ## <span id="Contract">Contract</span>
 Contract me if you have any problem in the following way:
