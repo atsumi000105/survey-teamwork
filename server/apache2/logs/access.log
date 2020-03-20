@@ -1,8 +1,5 @@
-::1 - - [19/Mar/2020:21:26:54 +0800] "GET / HTTP/1.1" 304 -
-::1 - - [19/Mar/2020:21:26:54 +0800] "GET /custom.css HTTP/1.1" 304 -
-::1 - - [19/Mar/2020:21:26:54 +0800] "GET /index.js HTTP/1.1" 304 -
-::1 - - [19/Mar/2020:21:26:54 +0800] "GET /qrcode.js HTTP/1.1" 304 -
-::1 - - [19/Mar/2020:21:26:54 +0800] "GET /jquery-3.4.1.min.js HTTP/1.1" 304 -
-::1 - - [19/Mar/2020:21:26:54 +0800] "GET /favicon.ico HTTP/1.1" 404 209
-::1 - - [19/Mar/2020:21:26:54 +0800] "GET /sendJson.php HTTP/1.1" 200 388
-::1 - - [19/Mar/2020:21:26:58 +0800] "GET /sendJson.php?fileName=CollegeLife_1584259428546.json HTTP/1.1" 200 463
+127.0.0.1 - - [20/Mar/2020:20:22:51 +0800] "GET /sendJson.php HTTP/1.1" 200 388
+192.168.0.102 - - [20/Mar/2020:20:25:27 +0800] "POST /saveRes.php HTTP/1.1" 200 96
+192.168.0.102 - - [20/Mar/2020:20:25:27 +0800] "POST /saveRes.php HTTP/1.1" 200 96
+192.168.0.102 - - [20/Mar/2020:20:25:27 +0800] "POST /saveRes.php HTTP/1.1" 200 96
+192.168.0.102 - - [20/Mar/2020:20:25:27 +0800] "POST /saveRes.php HTTP/1.1" 200 96
