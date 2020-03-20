@@ -1,4 +1,5 @@
 <?php
+/*to save the json string in files from 'POST' button in makeSurvey */
 header("Access-Control-Allow-Origin:*");
 header('Access-Control-Allow-Methods:POST');
 header("content-type:text/html;charset=utf-8");

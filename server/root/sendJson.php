@@ -1,4 +1,5 @@
 <?php
+/*to send the survey json string to index */
 header("content-type:text/html;charset=utf-8");
 $filepath=realpath('jsonfile/');
 

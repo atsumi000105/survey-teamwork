@@ -1,4 +1,5 @@
  <?php
+ /* to save the results of the survey from survey app*/
     header('Content-Type: text/html; charset=utf-8');
     if (isset($_POST['survey_id']) && isset($_POST['answers'])) {
         $survey_id = $_POST['survey_id'];
