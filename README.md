@@ -4,11 +4,11 @@
 ## Dependencies
 
 ## Table of contents
-[Installation](#Installation)
-[Usage](#Usage)
-[Note](#Note)
-[Team](#Team)
-[Contract](#Contract)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Note](#Note)
+- [Team](#Team)
+- [Contract](#Contract)
 
 ## <span id="Installation"> Installation</span>
  - Move the `server/root` folder to your web server.
