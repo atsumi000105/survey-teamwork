@@ -1,5 +1,5 @@
-#client
-##How to upload the data?
+# client
+## How to upload the data?
 * First, in ChooseActivity, all the answer will be saved in a String variable saveAnswer and questions will be saved in a array of string. The The total number of questions and the id of the questionnaire are also stored in the variables. They will be put into an intent pasted to the ReportActivity
 ```java
  CtoR.putExtra("answerJSON",saveAnswer);
