@@ -1,41 +1,26 @@
-# survey-teamwork
-#### Note:
-**Please Never Name the Survey Title in Chinese**
-**问卷标题请不要用中文**
-
-## website:
-#### 1. Directories:
-Root Site: E:\Git\survey-teamwork\server\root
->index.html: To view the surveys posted and Scan QR code.
->index.js: To deal with index.html
-
->makeSurvey.html: To create and post survey.
->makeSurvey.js: To deal with makeSurvey.js
-
->custom.css: the common stylesheet
-
->saveJson.php: To save the survey in json files.
-
->saveRes.php:To save the result of users' answers.
-
->sendJson.php: To send json files to index.html.
-
->ErrorJson.php: To show errors when Posting failed.
-
-#### 2. Usage:
->**website**:
->Please open the USBWebServer.exe first, since this is a local webserver project. And make sure the Apache and Mysql both are started.
->enter http://localhost:8080/index.html in your browser to visit the website.
->index.html: Create->makeSurvey.html: Post->makeSurvey.html:Back to index ->index.html:scan QR code according to the title.
-
->**android**:
->Scan the Qr code->answer the questions->save or upload->exit
->Make sure your phone and computer in the same LAN when you upload.
-
-**Please Never Name the Survey Title in Chinese**
-**问卷标题请不要用中文**
-
-members:
-Cherry(任婷婷）：20176134
-Cynthia（陈馨）：20175980
-Geralt（王腾）：20175990
+#client
+##How to upload the data?
+* First, in ChooseActivity, all the answer will be saved in a String variable saveAnswer and questions will be saved in a array of string. The The total number of questions and the id of the questionnaire are also stored in the variables. They will be put into an intent pasted to the ReportActivity
+```java
+ CtoR.putExtra("answerJSON",saveAnswer);
+        CtoR.putExtra("count",count);
+        CtoR.putExtra("survey_id",Survey_id);
+        String[] quesArr=quesList.toArray(new String[quesList.size()]);
+        CtoR.putExtra("quesArr",quesArr);
+```
+* Second, ReportActivity will get the intent from ChooseActivity and get all the data to show them in a TextView. In this activity, the app will ask the user to get the permission of ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION and READ_PHONE_STATE to get the information of user's location and imei. 
+  * function of getting data and time when the user uploads the result
+  ```java
+    public String getTime(){...}
+  ```
+  * function of getting location when the user uploads the result
+  ```java
+    public String getLocation() {...}
+  ```
+  * function of getting the imei of user's phone
+  ```java
+   public String[] getIMEI() throws Exception {
+   ```
+All the data will be saved in the sqlite of the client and the database of the server. Once a data cannot be properly obtained it will be set to null. If the server receives the uploaded data, it will prompt the user to upload successfully. Otherwise, it will prompt the user to upload failed and ask the user to check the information of network Settings
+    
+ 
