@@ -102,9 +102,11 @@
         android:text="I accept these requests."
         android:textColor="@color/black"
         android:textSize="@dimen/h3"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="30dp"
         android:layout_gravity="center"></CheckBox>
         <Button
+            android:id="@+id/btn_start"
+            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="@dimen/btn_height"
             android:background="@color/colorPrimary"

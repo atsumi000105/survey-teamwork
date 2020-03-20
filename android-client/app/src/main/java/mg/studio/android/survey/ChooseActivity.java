@@ -51,21 +51,6 @@ public class ChooseActivity extends AppCompatActivity {
     JSONObject Jo;
     String Jstr="";
     String Survey_id;
-    private static String[] PERMISSION = {
-            Manifest.permission.CAMERA
-    };
-    private static int PERMISSION_CODE = 1;
-
-    //允许获得授权
-    public void getPermission(){
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-                    != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, PERMISSION, PERMISSION_CODE);
-            }
-        }
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +60,6 @@ public class ChooseActivity extends AppCompatActivity {
         style="";
         saveAnswer="{";
         CtoR=new Intent(this,ReportActivity.class);
-        getPermission();
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads().detectDiskWrites().detectNetwork().penaltyLog().build());
         StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().penaltyDeath().build());
 
@@ -279,7 +263,6 @@ public class ChooseActivity extends AppCompatActivity {
         CtoR.putExtra("answerJSON",saveAnswer);
         CtoR.putExtra("count",count);
         CtoR.putExtra("survey_id",Survey_id);
-        //把queslist转化成array
         String[] quesArr=quesList.toArray(new String[quesList.size()]);
         CtoR.putExtra("quesArr",quesArr);
 
