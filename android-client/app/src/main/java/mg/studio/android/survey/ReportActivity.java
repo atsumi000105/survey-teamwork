@@ -2,6 +2,7 @@ package mg.studio.android.survey;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -51,8 +52,6 @@ public class ReportActivity extends AppCompatActivity {
     EditText IP;
     //授权信息
     private static String[] PERMISSION = {
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.READ_PHONE_STATE,
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION
@@ -61,19 +60,17 @@ public class ReportActivity extends AppCompatActivity {
 
     //允许获得授权
     public void getPermission(){
+        if ((ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+                != PackageManager.PERMISSION_GRANTED)||(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED)||(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED)){
+            AlertDialog accept = new AlertDialog.Builder(this)
+                .setMessage("We need to get your permisson of: \n\n    READ_PHONE_STATE, \n    ACCESS_FINE_LOCATION, \n    ACCESS_COARSE_LOCATION" +
+                        "\n\nso that we can get your IMEI and your location. We need these information to add to database")
+                .setPositiveButton("OK", null)
+                .create();
+        accept.show();}
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-                    != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, PERMISSION, PERMISSION_CODE);
-            }
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, PERMISSION, PERMISSION_CODE);
-            }
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-                    != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, PERMISSION, PERMISSION_CODE);
-            }
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
                     != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, PERMISSION, PERMISSION_CODE);
@@ -94,7 +91,6 @@ public class ReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
-        getPermission();
         getAnswer=getIntent();
         count=getAnswer.getIntExtra("count",0);
         ANSWER=getAnswer.getStringExtra("answerJSON");
@@ -130,6 +126,7 @@ public class ReportActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void UPLOAD(View view) throws IOException {
+        getPermission();
        /* 保存到本地数据库;*/
         try {
             String[] imei=getIMEI();
@@ -147,7 +144,7 @@ public class ReportActivity extends AppCompatActivity {
         /*上传数据到服务端*/
         IP=findViewById(R.id.ip_computer);
         String IP_computer=IP.getText().toString();
-        String url="http://"+IP_computer+":8080/saveRes.php";
+        String url="http://"+IP_computer+"/saveRes.php";
         JSONObject jsonobj=new JSONObject();//包装数据为json对象
         String ans=ANSWER.replaceAll("\"","");
         try{
@@ -213,7 +210,7 @@ public class ReportActivity extends AppCompatActivity {
         String[] imei=new String[]{"null","null"};
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED)
         {
-            Toast.makeText(this, "未获取设备读取权限", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Permission of getting phone state is not allowed", Toast.LENGTH_SHORT).show();
             return imei;
         } else {
             TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
@@ -251,7 +248,7 @@ public class ReportActivity extends AppCompatActivity {
                 != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                         != PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(this, "获取位置信息未被允许", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Permission of getting location information is not allowed", Toast.LENGTH_SHORT).show();
             return null;
         } else {
             Location location=null;
@@ -276,17 +273,16 @@ public class ReportActivity extends AppCompatActivity {
                     }
             );
             location = lm.getLastKnownLocation((LocationManager.GPS_PROVIDER));
-            System.out.println("获取位置信息");
 
             if (location != null) {
                 StringBuilder sb = new StringBuilder();
-                sb.append("经度：");
+                sb.append("longitude：");
                 sb.append(location.getLongitude());
-                sb.append("，纬度：");
+                sb.append(", latitude：");
                 sb.append(location.getLatitude());
                 return sb.toString();
             } else {
-                Toast.makeText(this, "未获取到位置信息", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Location information not obtained", Toast.LENGTH_SHORT).show();
                 return null;
             }
         }
