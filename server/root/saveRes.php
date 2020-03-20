@@ -1,4 +1,5 @@
  <?php
+ /* to save the results of the survey from survey app*/
     header('Content-Type: text/html; charset=utf-8');
     if (isset($_POST['survey_id']) && isset($_POST['answers'])) {
         $survey_id = $_POST['survey_id'];
@@ -14,9 +15,7 @@
     } else {
         echo "please set the survey_id and answers";
     }
-?> 
 
-<?php
 /*create database*/
 function createDB($username, $password, $server = "localhost", $DBname = "surveyDB")
 {
@@ -35,9 +34,7 @@ function createDB($username, $password, $server = "localhost", $DBname = "survey
         return null;
     }
 }
-?>
 
-<?php
 /*create survey table */
 function createTable($conn, $tablename = "Survey_Result", $DBname = "surveyDB")
 {
@@ -57,9 +54,7 @@ function createTable($conn, $tablename = "Survey_Result", $DBname = "surveyDB")
         echo "create table:connection is null";
     }
 }
-?>
 
-<?php
 /* insert data into table*/
 function insertData($conn, $survey_id, $answers, $location, $time, $imei, $tablename = "Survey_Result")
 {

@@ -1,4 +1,5 @@
 <?php
+/*to send the survey json string to index */
 header("content-type:text/html;charset=utf-8");
 $filepath=realpath('jsonfile/');
 
@@ -9,8 +10,7 @@ if(isset($_GET['fileName'])){//for Qr code
 	$fileArr=getFiles($filepath);
 	echo json_encode($fileArr);
 }
-?>
-<?php
+
 /*
 get files saved on server as an Array
 return: array

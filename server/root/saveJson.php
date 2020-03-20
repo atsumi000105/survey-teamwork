@@ -1,4 +1,5 @@
 <?php
+/*to save the json string in files from 'POST' button in makeSurvey */
 header("Access-Control-Allow-Origin:*");
 header('Access-Control-Allow-Methods:POST');
 header("content-type:text/html;charset=utf-8");
@@ -10,11 +11,7 @@ $id=$arr['survey']['id'];
 $title=camel_case($title);
 $jsonfile="jsonfile/" . $title . "_" . $id . ".json";//filename:surveyTitle_surveyId.json
 file_put_contents($jsonfile,$str);
-// $fileurl="http://localhost:8080/" . $jsonfile;
-// echo "The server saved " . $fileurl;
-exit();
-?>
-<?php
+
 /*
 func:rid the spaces and Capitalize
 */
