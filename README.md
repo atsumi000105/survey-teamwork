@@ -10,6 +10,7 @@
 - [Note](#Note)
 - [Team](#Team)
 - [Code Instruction](#Code)
+- [Done and Todo](#Do)
 - [Contract](#Contract)
 
 ## <span id="Installation"> Installation</span>
@@ -93,7 +94,18 @@
    public String[] getIMEI() throws Exception {
    ```
 > All the data will be saved in the sqlite of the client and the database of the server. Once a data cannot be properly obtained it will be set to null. If the server receives the uploaded data, it will prompt the user to upload successfully. Otherwise, it will prompt the user to upload failed and ask the user to check the information of network Settings
-    
+
+## <span id="Do>Done and Todo<span>
+ **With this project, you can realize the following functions:**
+ 1. Create surveys on the web platform we provided.(we just provide the website codes,and note that the server database is mysql)
+ 2. get QR code of each survey you have posted on our platform.
+ 3. Scan QR code to generate a survey on your android phone.
+ 4. Finish the survey on your phone and save it. The data will be saved both in your phone and the server.
+ 5. If you want to exit the application, you have to unlock with your screen lock first.
+ **There are limitation still requires more work**
+ 1. The web platform is only used for creating surveys and QR codes, which means you are not allowed to view or fill in your posted surveys online, or you cannot change them either.
+ 2. The android application is for filling in surveys, so you have no access to create a survey on your phone, and you can only import a survey through its QRcode, which contains the json strings of the questions.
+ 
 ## <span id="Contract">Contract</span>
 Contract me if you have any problem in the following way:
 - Email at 13833799573@163.com 
