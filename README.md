@@ -28,6 +28,9 @@
 - Scan the QR code with your suvey app, the specific survey will automatically display in your app.
 - After finish the questions, upload it to the android database and server database. A prompt will pop up to inform you.
 - Exiting the APP requires you to unlock your system lock. Use your fingerprint or enter the passwork correctly, You can leave the app now.
+Here should be how the website and android app work:
+![website](https://github.com/WindWaving/survey-teamwork/blob/master/server/website.gif)
+![app](https://github.com/WindWaving/survey-teamwork/blob/master/android-client/phone.gif)
 
 ## <span id="Note">Note</span>
 - **Please Never Name the Survey Title in Chinese**
