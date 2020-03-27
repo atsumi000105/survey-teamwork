@@ -26,16 +26,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/indent_lit"
-            android:text="PLEASE CHOOSE AN SURVEY"
-            android:textColor="@color/black"
-            android:textSize="@dimen/h2"
-            >
-        </TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/indent_mid"
             android:text="LET'S BEGIN!"
             android:layout_marginTop="@dimen/ques_to_title"
@@ -45,8 +35,19 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="- You have to scan the QR code with the app to get the survey.The QR code is from the survey you have created on the web platform we provide"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="20dp"
             android:textSize="@dimen/h2"
+            android:textStyle="bold"
             android:text="Please permit openning your camera to scan the qrcode to start the survey"></TextView>
 
     </LinearLayout>

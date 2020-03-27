@@ -12,16 +12,32 @@
     android:orientation="vertical">
 
     <!--  Start : Your code should be within this block -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/title_height"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:text="SvyU"
-        android:textColor="@color/white"
-        android:textSize="@dimen/h1"
-        android:background="@color/colorPrimary">
-    </TextView>
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="SvyU"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h1"
+            android:background="@color/colorPrimary">
+        </TextView>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:text="help"
+            android:background="@color/orange"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:onClick="Help"/>
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -33,9 +49,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HERE ARE ANSWERS TO EACH QUESTION"
+            android:text="HERE ARE YOUR ANSWERS"
             android:textColor="@color/black"
-
             android:textSize="@dimen/h2"
             >
         </TextView>
@@ -81,7 +96,7 @@
             android:layout_height="@dimen/btn_height"
             android:background="@color/colorPrimary"
             android:layout_weight="1"
-            android:text="UPLOAD"
+            android:text="SAVE"
             android:textSize="@dimen/h2"
             android:textColor="@color/white"
             android:layout_marginRight="5dp"

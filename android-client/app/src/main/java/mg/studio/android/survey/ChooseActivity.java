@@ -189,8 +189,8 @@ public class ChooseActivity extends AppCompatActivity {
             flag=saveEditAnswer();
         }
 
-        if(flag){//答案已保存
-            if(current+1<count){//还未到最后一个问题
+        if(flag){//already saved answers
+            if(current+1<count){//still questions
                 current++;
                 saveAnswer+=",";
                 Jo=(JSONObject) JArr.get(current);

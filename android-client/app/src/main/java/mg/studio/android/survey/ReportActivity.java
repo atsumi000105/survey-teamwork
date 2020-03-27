@@ -58,6 +58,17 @@ public class ReportActivity extends AppCompatActivity {
     };
     private static int PERMISSION_CODE = 1;
 
+    //help
+    public void Help(View view){
+        AlertDialog help=new AlertDialog.Builder(this)
+                .setMessage("Here are some tips:\n\n  1. You have to fill in your server address and port to save your questionnair.If you are using a local server,"+
+                        " use 'ipconfig' in your cmd to get your server address.\n  2. The questionnair will be saved both in your phone and server when you press 'SAVE', if something goes wrong,"+
+                        " please check your network, and especially for a local server, please ensure your phone and server on the same LAN\n 3. You will have to unlock your screen lock first to exit the app")
+                .setPositiveButton("Close",null)
+                .create();
+        help.show();
+    }
+
     //get permissions
     public void getPermission(){
         if ((ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
@@ -66,7 +77,7 @@ public class ReportActivity extends AppCompatActivity {
                 != PackageManager.PERMISSION_GRANTED)){
             AlertDialog accept = new AlertDialog.Builder(this)
                 .setMessage("We need to get your permisson of: \n\n    READ_PHONE_STATE, \n    ACCESS_FINE_LOCATION, \n    ACCESS_COARSE_LOCATION" +
-                        "\n\nso that we can get your IMEI and your location. We need these information to add to database")
+                        "\n\nso that we can get your IMEI and your location. We need these information to save")
                 .setPositiveButton("OK", null)
                 .create();
         accept.show();}
